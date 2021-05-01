@@ -1,2 +1,0 @@
-(this["webpackJsonpreact-yt-api"]=this["webpackJsonpreact-yt-api"]||[]).push([[0],{9:function(t,e,r){"use strict";r.r(e);r(0);var c=r(3),n=r.n(c),i=r(1),p=function(){return Object(i.jsx)("div",{children:"App"})};n.a.render(Object(i.jsx)(p,{}),document.querySelector("#root"))}},[[9,1,2]]]);
-//# sourceMappingURL=main.5cc60a9a.chunk.js.map
