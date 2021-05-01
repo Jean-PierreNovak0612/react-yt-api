@@ -1,8 +1,14 @@
 import React from 'react';
 
+import SearchBar from './SearchBar';
+
+import 'semantic-ui-css/semantic.min.css';
+
 const App = () => {
     return (
-        <div>App</div>
+        <div className="ui container">
+            <SearchBar label="Video search"/>
+        </div>
     )
 };
 
