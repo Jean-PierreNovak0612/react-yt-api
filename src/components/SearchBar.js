@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ label }) => {
+const SearchBar = ({ label, onFormSubmit }) => {
 
     const [term, setTerm] = useState('');
 
     const onChange = (event) => {
 
-        setTerm(event.target.value)
+        setTerm(event.target.value);
 
     }
 
     const onSubmit = (event) => {
 
         event.preventDefault()
+
+        onFormSubmit(term);
 
     }
 
