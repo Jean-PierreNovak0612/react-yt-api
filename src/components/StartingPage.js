@@ -2,6 +2,8 @@ import React from 'react';
 
 import VideoItem from './VideoItem';
 
+import '../css/StartingPageVideoList.css';
+
 const StartingPage = ({ onVideoSelect, videos }) => {
 
     const renderVideoList = () => {
@@ -9,8 +11,8 @@ const StartingPage = ({ onVideoSelect, videos }) => {
         return (
             videos.map(video => {
                 return (
-                    <div key ={video.id.videoId} className="three wide column">
-                        <VideoItem onVideoSelect={onVideoSelect} video={video} />)
+                    <div key ={video.id.videoId} className="three wide column starting-page">
+                        <VideoItem setClass="videos" onVideoSelect={onVideoSelect} video={video} />)
                     </div>
                 )
             })

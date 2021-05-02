@@ -1,0 +1,7 @@
+.videos {
+	cursor: pointer !important;
+}
+
+.videos.item img {
+	max-width: 100% !important;
+}
