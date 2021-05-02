@@ -2,6 +2,8 @@ import React from 'react';
 
 import VideoItem from './VideoItem';
 
+import '../css/VideoItem.css';
+
 const VideoList = ({ videos, onVideoSelect }) => {
 
     const renderListOfVideos = videos.map(video => <VideoItem key ={video.id.videoId} onVideoSelect={onVideoSelect} video={video} />)

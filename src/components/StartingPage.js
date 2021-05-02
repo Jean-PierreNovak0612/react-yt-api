@@ -1,9 +1,30 @@
 import React from 'react';
 
-const StartingPage = () => {
+import VideoItem from './VideoItem';
+
+const StartingPage = ({ onVideoSelect, videos }) => {
+
+    const renderVideoList = () => {
+        console.log(videos);
+        return (
+            videos.map(video => {
+                return (
+                    <div key ={video.id.videoId} className="three wide column">
+                        <VideoItem onVideoSelect={onVideoSelect} video={video} />)
+                    </div>
+                )
+            })
+        )
+    }
 
     return (
-        <div>StartingPage</div>
+        <div className="ui grid">
+            <div className="ui row">
+                {renderVideoList()}
+            </div>
+        </div>
     )
 
 }
+
+export default StartingPage;

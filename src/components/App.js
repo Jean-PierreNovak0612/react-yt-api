@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import SearchBar from './SearchBar';
 import StartingPage from './StartingPage';
@@ -10,16 +10,17 @@ import 'semantic-ui-css/semantic.min.css';
 const App = () => {
 
     const [selectedVideo, setSelectedVideo] = useState(null);
-
-    const NUMBER_OF_VIDEOS_TO_FETCH = !selectedVideo ? 50 : 5;
     
-    const [videos, search] = useVideos('react', NUMBER_OF_VIDEOS_TO_FETCH);
-
+    const [videos, search] = useVideos('react');
     
     return(
         <div className="ui container">
-            <SearchBar onFormSubmit={search} label="Video search" />
-            <DisplayVideo selectedVideo={selectedVideo} onVideoSelect={setSelectedVideo} videos={videos} />
+            <SearchBar onFormSubmit={search} label="Video search" clearSelectedVideo={setSelectedVideo} />
+            {
+                !selectedVideo ? 
+                <StartingPage onVideoSelect={setSelectedVideo} videos={videos} /> :
+                <DisplayVideo selectedVideo={selectedVideo} onVideoSelect={setSelectedVideo} videos={videos} />
+            }
         </div>
     )
 

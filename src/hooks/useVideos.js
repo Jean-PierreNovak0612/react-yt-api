@@ -2,19 +2,19 @@ import { useEffect, useState } from 'react';
 
 import youtube from '../api/youtubeApi';
 
-const useVideos = (defaultSearchTerm, numberOfVideos = 5) => {
+const useVideos = (defaultSearchTerm) => {
+
     
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        search(defaultSearchTerm, numberOfVideos);
-    }, [defaultSearchTerm, numberOfVideos]);
+        search(defaultSearchTerm);
+    }, [defaultSearchTerm]);
 
-    const search = async (term, videoCount) => {
+    const search = async (term) => {
         const response = await youtube('/search', {
             params: {
-                q: term,
-                maxResults: videoCount
+                q: term
             }
         });
 

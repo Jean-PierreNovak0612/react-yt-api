@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ label, onFormSubmit }) => {
+const SearchBar = ({ label, onFormSubmit, clearSelectedVideo }) => {
 
     const [term, setTerm] = useState('');
 
@@ -12,9 +12,11 @@ const SearchBar = ({ label, onFormSubmit }) => {
 
     const onSubmit = (event) => {
 
-        event.preventDefault()
+        event.preventDefault();
 
         onFormSubmit(term);
+
+        clearSelectedVideo(null);
 
     }
 
