@@ -5,3 +5,8 @@
 .videos.item img {
 	max-width: 100% !important;
 }
+
+.spaces {
+	margin-top: 20px !important;
+	width: 100% !important;
+}
